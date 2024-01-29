@@ -1,4 +1,4 @@
-function addProducts(products: string[], newProduct: string): string[] {
+function addProducts<T>(products: T[], newProduct: T): T[] {
   return [...products, newProduct];
 }
 
@@ -29,8 +29,8 @@ const newFlour: Flour = {
   gluten: true,
 };
 
-// const bread = addProducts(breads, newBread); // Error: Argument of type 'Bread[]' is not assignable to parameter of type 'string[]'.
-// const flour = addProducts(flours, newFlour); // Error: Argument of type 'Flour[]' is not assignable to parameter of type 'string[]'.
+const bread = addProducts(breads, newBread);
+const flour = addProducts(flours, newFlour);
 
-// console.log('bread', bread);
-// console.log('flour', flour);
+console.log('bread', bread);
+console.log('flour', flour);
